@@ -45,6 +45,9 @@ nav {
   align-items: center;
   padding: 1.5rem 3rem;
   background-color: var(--primary-background);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 ul {
   display: flex;
@@ -288,12 +291,45 @@ img {
 .products {
   margin-top: 3rem;
   padding-bottom: 40px;
+  padding-left: 0;
 }
 .products-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5rem;
+  padding-left: 120px;
+}
+
+.products-box:nth-child(4) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: flex-start;
+}
+.products-box:nth-child(4) > .product-detail {
+  padding-top: 1rem;
+}
+
+.products-box:nth-child(4) > .product-detail h3 {
+  font-size: var(--font-size-h3);
+}
+
+.products-img {
+  max-width: 646px;
+  min-height: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.products-img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #eed8ca;
+  bottom: -1.25rem;
+  left: -2rem;
+  z-index: -1;
 }
 
 .products p {
@@ -388,8 +424,9 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 2.75rem 8.75rem;
-  background-color: #FFFBF8;
-margin-bottom: 4rem;
+  background-color: #fffbf8;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .rare-card {
@@ -405,4 +442,109 @@ margin-bottom: 4rem;
 .rare-card span {
   color: var(--Secondary-Color-brow);
   font-size: var(--font-size-h3-title);
+}
+
+/* customers */
+
+.customers {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #fffbf8;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.title {
+  margin-top: 4rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 5rem;
+}
+
+.title h3 {
+  font-size: var(--font-size-h3-title);
+}
+
+.customers p {
+  font-weight: 400;
+  font-size: var(--font-size-paragrap);
+  line-height: 198.5%;
+  color: var(--secondary-color-gray-text);
+}
+
+.card-container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 7rem;
+  gap: 36px;
+}
+.card {
+  max-width: 374px;
+  min-height: 403px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 30px 25px;
+  background-color: #fff;
+  gap: 2.5rem;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.star-group {
+  display: flex;
+  gap: 6px;
+}
+
+.profile {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile .img-face {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  margin: 0 8px;
+  border-radius: 50%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.img-face img {
+  height: 64px;
+  aspect-ratio: auto 32 / 32;
+  width: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile .detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail span:nth-child(1) {
+  font-size: var(--font-size-paragrap);
+  color: var(--secondary-Color-title-brow);
+}
+
+.detail span:nth-child(2) {
+  font-size: var(--font-size-paragrap);
+  color: var(--secondary-color-gray-text);
 }
