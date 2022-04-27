@@ -551,6 +551,7 @@ section.products {
 
 .profile__user img {
   max-width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1/1;
@@ -632,6 +633,16 @@ section.products {
     margin-top: var(--margin-inline);
     gap: 0;
   }
+
+  /* customer */
+
+  .customers__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-inline: var(--margin-inline);
+    margin-top: 64px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -701,6 +712,16 @@ section.products {
 
   .h3-bigscal {
     font-size: var(--font-size-h3);
+  }
+
+  /* customer */
+
+  .customers__group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-inline: var(--margin-inline);
+    margin-top: 64px;
   }
 }
 
